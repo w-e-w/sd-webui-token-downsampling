@@ -186,7 +186,7 @@ def on_ui_settings():
 
 
 def add_xyz_axis_options():
-    xyz_grid = [x for x in scripts.scripts_data if x.script_class.__module__ == "xyz_grid.py"][0].module
+    xyz_grid = [x for x in scripts.scripts_data if x.script_class.__module__ in ('scripts.xyz_grid', 'xyz_grid.py')][0].module
 
     todo_axis_options = [
         xyz_grid.AxisOption("[ToDo] Downsampling factor", float, xyz_grid.apply_field("token_downsampling_factor")),
